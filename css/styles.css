@@ -40,6 +40,7 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --Turquesa: #00bacf;
+  --Jade: #23a8cc;
 }
 
 *,
@@ -65,7 +66,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #09807b;
+  color: var(--Jade);
   text-align: left;
   background-color: #fff;
 }
@@ -160,12 +161,12 @@ sup {
 }
 
 a {
-  color: #fed136;
+  color: var(--Jade);
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #e6b301;
+  color: var(--Turquesa);
   text-decoration: underline;
 }
 
@@ -2525,13 +2526,13 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: var(--Jade);
+  border-color: var(--Jade);
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #fec810;
-  border-color: #fec503;
+  background-color: var(--Turquesa);
+  border-color: var(--Turquesa);
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -10052,16 +10053,13 @@ h3 {
     border-color: #dee2e6;
   }
 }
-body {
-  overflow-x: hidden;
-}
 
 p {
   line-height: 1.75;
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 9rem 0;
 }
 .page-section h2.section-heading {
   font-size: 2.5rem;
@@ -10165,6 +10163,59 @@ img::-moz-selection {
   font-family: 'Oswald', sans-serif;
 }
 
+.slides{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 50%;
+}
+
+.slide1::before{
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 0;
+  background-image: url('../assets/img/portfolio/mascara-carrusel-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 120% center;
+}
+
+.slide2{
+  padding-right: 5%;
+}
+
+.slide2 .row{
+  width: 100%;
+}
+
+.slide3::before{
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 0;
+  background-image: url('../assets/img/portfolio/botella.png');
+  background-repeat: no-repeat;
+  background-size: auto 90%;
+  background-position: 99% center;
+}
+
+.slides h2,.slides p{
+  color: #000;
+}
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -10205,7 +10256,7 @@ header.masthead2 {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-color:#09807b ;
+  background: var(--Turquesa);
   /* background-image: url("../assets/img/Photos/disinfector_1.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10225,9 +10276,9 @@ header.masthead {
 header.masthead::before {
   display: block;
   content: "";
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-image: url(../assets/img/Photos/provisional.png);
+  background-image: url(../assets/img/Photos/back-portada.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -10252,6 +10303,17 @@ header.masthead .masthead-heading {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.tel-portada {
+  position: absolute;
+  bottom: 3%;
+  color: #23a8cc;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+}
+
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 17rem;
@@ -10270,48 +10332,27 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
-#portfolio .portfolio-item {
-  max-width: 25rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-#portfolio .portfolio-item .portfolio-link {
+#portfolio{
+  padding: 0px;
   position: relative;
-  display: block;
-  margin: 0 auto;
-}
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
-  display: flex;
-  position: absolute;
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  background: rgba(254, 209, 54, 0.9);
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity ease-in-out 0.25s;
+  overflow: hidden;
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
-  font-size: 1.25rem;
-  color: white;
-}
-#portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
-  opacity: 1;
-}
-#portfolio .portfolio-item .portfolio-caption {
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #fff;
-}
-#portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
-  font-size: 1.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  margin-bottom: 0;
-}
-#portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
-  font-style: italic;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+#portfolio::after{
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 21%;
+  display: block;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  background-image: url(../assets/img/portfolio/footer-carrusel-servicios.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  z-index: 2;
 }
 
 .portfolio-modal .modal-dialog {
@@ -10411,7 +10452,8 @@ header.masthead .masthead-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color: var(--Jade);
+  padding: 1%;
 }
 .timeline > li .timeline-image h4 {
   font-size: 10px;

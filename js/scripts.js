@@ -20,7 +20,7 @@
             if (target.length) {
                 $("html, body").animate(
                     {
-                        scrollTop: target.offset().top - 72,
+                        scrollTop: target.offset().top,
                     },
                     1000,
                     "easeInOutExpo"
@@ -54,3 +54,11 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        loop:true,
+        autoWidth:true,
+        items: 1
+    });
+});

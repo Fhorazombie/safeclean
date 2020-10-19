@@ -59,6 +59,8 @@ $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         loop:true,
         autoWidth:true,
-        items: 1
+        items: 1,
+        nav: true,
+        autoHeight: true,
     });
 });

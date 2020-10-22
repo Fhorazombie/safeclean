@@ -55,12 +55,3 @@
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
 
-$(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-        loop:true,
-        autoWidth:true,
-        items: 1,
-        nav: true,
-        autoHeight: true,
-    });
-});
